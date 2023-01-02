@@ -1,0 +1,318 @@
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@200;500&display=swap";
+:root {
+  --clr-primary: #18ffff;
+  --cor-background: #ecf0f3;
+  --cor-branco: #fff;
+  --cor-sombra-padrao: rgba(0, 0, 0, 0.16);
+  --cor-botao-normal: #78797a;
+  --cor-botao-normal-hover: #afafaf;
+  --cor-botao-topo-cinza-escuro: #5e5e60;
+  --cor-botao-topo-cinza-escuro-hover: #7b797a;
+  --cor-botao-laranja: #ff9e0b;
+  --cor-botao-laranja-hover: #c97c02;
+  --cor-input-resultado: #504b52;
+  --cor-botao-fechar: #fe5f56;
+  --cor-botao-minimizar: #fdbc2e;
+  --cor-botao-maximizar: #28c840;
+  --cor-borda-botoes: rgba(0, 0, 0, 0.4);
+  --cor-borda-calculadora: rgba(0, 0, 0, 1);
+}
+* {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
+.conteudo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.conteudo .jogo-velha {
+  background-color: #000;
+  margin-top: 2%;
+  height: 90vh;
+  max-width: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 2px solid aqua;
+  box-shadow: 5px 5px 12px var(--cor-sombra-padrao);
+}
+h2 {
+  margin-top: -25px;
+  margin-bottom: 40px;
+  padding-right: 5px;
+}
+h2,
+h3 {
+  background-color: #000;
+  font-weight: 500;
+  color: aqua;
+}
+.form {
+  position: relative;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  width: 80%;
+  height: 40px;
+  font-size: 15px;
+  padding-left: 8px;
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid #18ffff;
+  background-color: var(--clr-bg);
+  color: var(--clr-primary);
+}
+label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-left: 0 8px 8px;
+  margin-left: 25px;
+  font-weight: 800;
+  pointer-events: none;
+  font-size: 2em;
+  color: var(--clr-primary);
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-color: transparent;
+}
+.form input:valid ~ label,
+.form input:focus ~ label {
+  background-color: #060b23;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.8em;
+  padding: 0 5px;
+  color: var(--clr-primary);
+  border-left: 1px solid #18ffff;
+  border-right: 1px solid #18ffff;
+}
+.conteudo .jogo-velha .conteudo__span {
+  display: grid;
+  grid-template-columns: 6rem 6rem 6rem;
+  grid-template-rows: 6rem 6rem 6rem;
+  gap: 0.3rem;
+  max-width: 60vh;
+  background-color: aqua;
+}
+.conteudo .jogo-velha .conteudo__span span {
+  height: 98px;
+  width: 96px;
+  display: flex;
+  font-size: 90px;
+  font-weight: 700;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: #000;
+  color: aqua;
+  cursor: pointer;
+}
+.conteudo .jogo-velha .conteudo__span span:hover {
+  background-color: #304543;
+}
+.btn__submit {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  letter-spacing: 4px;
+}
+.btn__submit:hover {
+  background: #03e9f4;
+  color: #0a0b15;
+  border-radius: 5px;
+}
+.btn__submit span {
+  position: absolute;
+  display: block;
+}
+.btn__submit span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+.btn__submit span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+.btn__submit span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+.btn__submit span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+#gameBoard span.win {
+  background-color: var(--clr-primary);
+  color: #060b23;
+}
+.container-points {
+  display: inline-block;
+  width: 450px;
+  height: 150px;
+  padding: 50px;
+  border: 5px dashed var(--clr-primary);
+  box-sizing: border-box;
+  margin-left: 40px;
+}
+.points h2 {
+  color: var(--clr-primary);
+  font-size: 20px;
+  font-weight: 300;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+.footer p {
+  color: #504b52;
+}
+.footer a {
+  color: var(--clr-primary);
+}
+
+@media screen and (max-width: 700px) {
+  .conteudo {
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+  .conteudo .jogo-velha {
+    margin-top: 2%;
+    height: 100vh;
+    max-width: 90vh;
+  }
+  h2 {
+    font-weight: 500;
+    margin-top: -15px;
+  }
+  input {
+    width: 80%;
+    height: 35px;
+    font-size: 15px;
+  }
+  label {
+    font-weight: 500;
+    font-size: 1.5em;
+  }
+  .container-points {
+    width: 250px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 40px;
+    text-align: center;
+  }
+  .container-points h2.font {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .conteudo {
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+  .conteudo .jogo-velha {
+    margin-top: 2%;
+    height: 100vh;
+    max-width: 80vh;
+  }
+  h2 {
+    font-weight: 500;
+    margin-top: -25px;
+  }
+  input {
+    width: 80%;
+    height: 35px;
+    font-size: 15px;
+  }
+  label {
+    font-weight: 500;
+    font-size: 1.5em;
+  }
+  .container-points {
+    width: 250px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 40px;
+    text-align: center;
+  }
+  .container-points h2.font {
+    font-size: 15px;
+  }
+}
