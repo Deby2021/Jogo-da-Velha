@@ -1,4 +1,12 @@
-# Jogo-da-Velha
+# **Jogo-da-Velha** :x::o:
 
-## Linguagens utilizadas:
-#### HTML, CSS, JAVASCRIPT
+> ### Technologies involved
+>>HMTL
+
+>>CSS
+
+>>JAVASCRIPT
+
+>>DOM
+
+### [Curso Full Stack - OneBitCode](https://onebitcode.com/lp/)
